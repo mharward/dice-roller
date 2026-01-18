@@ -1,5 +1,5 @@
 import './RollHistory.css';
-import { HistoryEntry } from '../utils/dice';
+import { HistoryEntry, getDieDisplayValue } from '../utils/dice';
 
 interface RollHistoryProps {
   history: HistoryEntry[];
@@ -28,7 +28,7 @@ function RollHistory({ history, onRestore }: RollHistoryProps) {
           <div className="history-item__dice">
             {entry.dice.map(die => (
               <span key={die.id} className="history-item__die">
-                D{die.type}:{die.value}
+                {die.type === 100 ? 'D%' : `D${die.type}`}:{getDieDisplayValue(die)}
               </span>
             ))}
           </div>

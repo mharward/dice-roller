@@ -1,6 +1,6 @@
 import { useRef, useState, useCallback, useEffect } from 'react';
 import './Die.css';
-import { PoolDie } from '../utils/dice';
+import { PoolDie, getDieDisplayValue } from '../utils/dice';
 
 interface DieProps {
   die: PoolDie;
@@ -123,9 +123,9 @@ function Die({ die, onRemove, poolRef }: DieProps) {
       onContextMenu={handleContextMenu}
       onDoubleClick={handleDoubleClick}
     >
-      <span className="die__type">D{die.type}</span>
+      <span className="die__type">{die.type === 100 ? 'D%' : `D${die.type}`}</span>
       <span className={`die__value ${die.value === null ? 'die__value--empty' : ''}`}>
-        {die.value ?? '?'}
+        {getDieDisplayValue(die)}
       </span>
       <button
         className="die__remove"

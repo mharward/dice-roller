@@ -125,6 +125,40 @@ const DiceShapes: Record<DieType, React.ReactNode> = {
       <text x="50" y="56" textAnchor="middle" className="dice-selector__text">D10</text>
     </svg>
   ),
+  100: (
+    // Percentile die - same shape as d10 but different color scheme
+    <svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet" className="dice-selector__shape">
+      <defs>
+        <linearGradient id="d100-top" x1="0%" y1="100%" x2="0%" y2="0%">
+          <stop offset="0%" stopColor="#5a3a5a" />
+          <stop offset="100%" stopColor="#7a4a7a" />
+        </linearGradient>
+        <linearGradient id="d100-left" x1="100%" y1="0%" x2="0%" y2="50%">
+          <stop offset="0%" stopColor="#4a2a4a" />
+          <stop offset="100%" stopColor="#3a1a3a" />
+        </linearGradient>
+        <linearGradient id="d100-right" x1="0%" y1="0%" x2="100%" y2="50%">
+          <stop offset="0%" stopColor="#553555" />
+          <stop offset="100%" stopColor="#452545" />
+        </linearGradient>
+      </defs>
+      {/* Top point to wide middle */}
+      <polygon points="50,10 12,45 50,50" fill="url(#d100-left)" />
+      <polygon points="50,10 88,45 50,50" fill="url(#d100-top)" />
+      {/* Wide middle to bottom point */}
+      <polygon points="12,45 50,50 12,55" fill="#4a2a4a" />
+      <polygon points="88,45 50,50 88,55" fill="#523252" />
+      <polygon points="12,55 50,50 50,90" fill="#3a1a3a" />
+      <polygon points="88,55 50,50 50,90" fill="url(#d100-right)" />
+      {/* Outline */}
+      <polygon points="50,10 88,45 88,55 50,90 12,55 12,45" fill="none" stroke="#8a6a8a" strokeWidth="2" />
+      <line x1="50" y1="10" x2="50" y2="50" stroke="#6a4a6a" strokeWidth="1" />
+      <line x1="12" y1="45" x2="88" y2="55" stroke="#6a4a6a" strokeWidth="1" />
+      <line x1="12" y1="55" x2="88" y2="45" stroke="#6a4a6a" strokeWidth="1" />
+      <line x1="50" y1="50" x2="50" y2="90" stroke="#6a4a6a" strokeWidth="1" />
+      <text x="50" y="56" textAnchor="middle" className="dice-selector__text">D%</text>
+    </svg>
+  ),
   12: (
     // Dodecahedron - pentagon with 3D depth
     <svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet" className="dice-selector__shape">
