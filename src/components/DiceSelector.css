@@ -1,57 +1,80 @@
 .dice-selector {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
   height: 100%;
   background-color: var(--bg-secondary);
-  padding: 8px;
-  gap: 8px;
+  padding: 8px 4px;
+  gap: 2px;
 }
 
 .dice-selector__item {
   flex: 1;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--dice-bg);
-  border: 2px solid var(--dice-border);
-  border-radius: 8px;
+  background: transparent;
   color: var(--text-primary);
-  font-size: 1rem;
-  font-weight: bold;
-  min-height: 44px;
-  transition: background-color 0.15s, transform 0.1s;
+  transition: transform 0.1s, filter 0.15s;
   position: relative;
-  overflow: hidden;
+  border: none;
+  padding: 4px;
+  min-height: 60px;
 }
 
 .dice-selector__item:hover {
-  background-color: var(--bg-tertiary);
+  filter: brightness(1.2);
 }
 
 .dice-selector__item:active {
-  transform: scale(0.95);
-  background-color: var(--accent);
+  transform: scale(0.92);
 }
 
-.dice-selector__item--swiping {
-  background-color: var(--accent);
+.dice-selector__item--swiping .dice-selector__shape polygon,
+.dice-selector__item:active .dice-selector__shape polygon {
+  fill: var(--accent) !important;
 }
 
-.dice-selector__hint {
-  position: absolute;
-  right: 4px;
-  font-size: 0.6rem;
-  color: var(--text-secondary);
-  opacity: 0.6;
+.dice-selector__item--swiping .dice-selector__shape polygon[fill="none"],
+.dice-selector__item:active .dice-selector__shape polygon[fill="none"] {
+  fill: none !important;
+  stroke: #ff8a8a;
+}
+
+.dice-selector__shape {
+  width: 72px;
+  height: 72px;
+  flex-shrink: 0;
+}
+
+.dice-selector__text {
+  fill: var(--text-primary);
+  font-size: 18px;
+  font-weight: bold;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+  pointer-events: none;
 }
 
 @media (min-width: 768px) {
   .dice-selector {
-    padding: 12px;
-    gap: 12px;
+    padding: 12px 8px;
+    gap: 4px;
   }
 
   .dice-selector__item {
-    font-size: 1.2rem;
+    min-height: 80px;
+    padding: 8px;
+  }
+
+  .dice-selector__shape {
+    width: 90px;
+    height: 90px;
+  }
+
+  .dice-selector__text {
+    font-size: 20px;
   }
 }

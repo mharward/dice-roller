@@ -1,6 +1,6 @@
 .app {
   display: grid;
-  grid-template-columns: 80px 1fr;
+  grid-template-columns: 90px 1fr;
   grid-template-rows: 1fr auto;
   position: fixed;
   inset: 0;
@@ -31,6 +31,6 @@
 /* Tablet and larger */
 @media (min-width: 768px) {
   .app {
-    grid-template-columns: 100px 1fr;
+    grid-template-columns: 110px 1fr;
   }
 }
