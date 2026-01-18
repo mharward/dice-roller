@@ -30,5 +30,10 @@ npm run lint         # Run ESLint
 - **Roll History**: Bottom section showing previous rolls; clicking restores that dice set
 - **Interactions**:
   - Mobile: Swipe right on dice type to add to pool; drag/flick dice out to remove
-  - Desktop: Alternative removal mechanism (TBD)
-  - Roll button only appears after first roll
+  - Desktop: Click to add; right-click, double-click, or X button to remove
+  - Roll button only appears once dice are in the pool
+  - Clicking history restores that dice set; re-rolling creates new history entry
+
+## Deployment
+
+Deployed as a PWA via Netlify. Config in `netlify.toml`.

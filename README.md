@@ -50,6 +50,10 @@ npm run preview
 - Click any history entry to restore that exact dice set
 - Re-rolling creates a new history entry
 
+## Deployment
+
+Deployed as a PWA via Netlify. The `netlify.toml` configures the build and SPA routing.
+
 ## License
 
 MIT
