@@ -1,0 +1,108 @@
+.dice-pool {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 16px;
+  gap: 16px;
+  overflow: hidden;
+  min-width: 0;
+}
+
+.dice-pool__area {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  gap: 12px;
+  padding: 16px;
+  background-color: var(--bg-secondary);
+  border-radius: 12px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  min-width: 0;
+}
+
+.dice-pool__empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  color: var(--text-secondary);
+  font-size: 1rem;
+  text-align: center;
+  padding: 20px;
+}
+
+.dice-pool__actions {
+  display: flex;
+  gap: 12px;
+}
+
+.dice-pool__button {
+  flex: 1;
+  padding: 16px;
+  border-radius: 12px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  transition: background-color 0.15s, transform 0.1s;
+}
+
+.dice-pool__button--roll {
+  background-color: var(--accent);
+  color: white;
+}
+
+.dice-pool__button--roll:hover {
+  background-color: var(--accent-hover);
+}
+
+.dice-pool__button--roll:disabled {
+  background-color: var(--dice-bg);
+  color: var(--text-secondary);
+  cursor: not-allowed;
+}
+
+.dice-pool__button--roll:disabled:active {
+  transform: none;
+}
+
+.dice-pool__button--clear {
+  flex: 0 0 auto;
+  padding: 16px 24px;
+  background-color: var(--bg-tertiary);
+  color: var(--text-primary);
+}
+
+.dice-pool__button--clear:hover {
+  background-color: var(--dice-border);
+}
+
+.dice-pool__total {
+  text-align: center;
+  font-size: 1rem;
+  color: var(--text-secondary);
+}
+
+.dice-pool__total-value {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--text-primary);
+  margin-left: 8px;
+}
+
+@media (min-width: 768px) {
+  .dice-pool {
+    padding: 24px;
+  }
+
+  .dice-pool__area {
+    gap: 16px;
+    padding: 24px;
+  }
+
+  .dice-pool__button {
+    font-size: 1.4rem;
+    padding: 20px;
+  }
+}

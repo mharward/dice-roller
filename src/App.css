@@ -1,0 +1,36 @@
+.app {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  grid-template-rows: 1fr auto;
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+}
+
+.app__main {
+  display: flex;
+  flex-direction: column;
+  grid-column: 2;
+  grid-row: 1;
+  overflow: hidden;
+  min-width: 0;
+}
+
+.app__selector {
+  grid-column: 1;
+  grid-row: 1 / 3;
+}
+
+.app__history {
+  grid-column: 2;
+  grid-row: 2;
+  overflow: hidden;
+  min-width: 0;
+}
+
+/* Tablet and larger */
+@media (min-width: 768px) {
+  .app {
+    grid-template-columns: 100px 1fr;
+  }
+}
